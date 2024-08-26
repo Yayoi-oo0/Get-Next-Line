@@ -6,7 +6,7 @@
 /*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:37 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/08/18 19:30:00 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/08/26 16:29:00 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 char	*get_next_line(int fd);
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 4
 # endif
 
 #endif
