@@ -6,12 +6,13 @@
 /*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:37 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/08/26 16:29:00 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/08/28 19:30:36 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
