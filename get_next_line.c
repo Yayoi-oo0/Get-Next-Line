@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:34 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/09/01 18:32:53 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/09/13 19:00:43 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,18 @@
 
 char	*get_next_line(int fd)
 {
+	char	*line;
+	char	c;
 
+	while (1)
+	{
+		c = ft_getc(fd);
+		if (c == EOF)
+			break ;
+		ft_putc(line, c);
+		if (c == '\n')
+			break ;
+	}
+	ft_putc(line, '\0');
+	return (line);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:33:46 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/09/01 18:35:30 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/09/13 19:02:55 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,17 @@
 
 int	main(void)
 {
-	char	*line;
 	int		fd;
+	char	*c;
 
 	fd = open("test.txt", O_RDONLY);
-	// line = NULl;
 	while (1)
 	{
-		line = ft_getc(fd);
-		if (!line)
+		c = get_next_line(fd);
+		if (c == NULL)
 			break ;
-		printf("%s\n", line);
-		// free(line);
+		printf("%s", c);
 	}
 	close(fd);
-	system("leaks a.out");
 	return (0);
 }

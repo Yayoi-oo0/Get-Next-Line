@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:37 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/09/01 18:35:11 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/09/13 18:55:40 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
-char	ft_getc(int fd);
+int		ft_getc(int fd);
+int		ft_putc(char *str, char c);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4
+#  define BUFFER_SIZE 100
 # endif
 
 #endif
