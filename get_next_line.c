@@ -6,7 +6,7 @@
 /*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:34 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/09/22 18:18:11 by okamotoyayo      ###   ########.fr       */
+/*   Updated: 2024/09/27 21:21:17 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ char	*get_next_line(int fd)
 		line = ft_putc(line, c);
 		if (c == '\n')
 			break ;
+		if (!line)
+			return (NULL);
 	}
-	line = ft_putc(line, '\0');
 	return (line);
 }

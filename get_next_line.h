@@ -6,7 +6,7 @@
 /*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:37 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/09/22 17:37:56 by okamotoyayo      ###   ########.fr       */
+/*   Updated: 2024/09/25 15:17:28 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 size_t	ft_strlen(const char *s);
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4
+#  define BUFFER_SIZE 42
+# endif
+
+# if BUFFER_SIZE > 8176 || BUFFER_SIZE < 0
+#  undef BUFFER_SIZE
+#  define BUFFER_SIZE 42
 # endif
 
 #endif

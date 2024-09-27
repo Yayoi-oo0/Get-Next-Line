@@ -6,7 +6,7 @@
 /*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:26 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/09/22 18:18:16 by okamotoyayo      ###   ########.fr       */
+/*   Updated: 2024/09/27 21:21:23 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int	ft_getc(int fd)
 	{
 		n = read(fd, buf, sizeof buf);
 		if (n < 0)
-			return (0);
+		{
+			bufp = buf;
+			n = 0;
+			return (EOF);
+		}
 		bufp = buf;
 	}
 	if (--n >= 0)
@@ -42,18 +46,18 @@ char	*ft_putc(char *str, char c)
 	{
 		newstr = (char *)malloc(sizeof(char) * 2);
 		if (!newstr)
-			return (0);
+			return (NULL);
 		newstr[0] = c;
 		newstr[1] = '\0';
 		return (newstr);
 	}
-	while (str[i])
-		i++;
-	newstr = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	i = ft_strlen(str);
+	newstr = (char *)malloc(sizeof(char) * (i + 2));
 	if (!newstr)
-		return (0);
+		return (NULL);
 	ft_memcpy(newstr, str, i);
 	newstr[i] = c;
+	newstr[i + 1] = '\0';
 	free(str);
 	return (newstr);
 }
