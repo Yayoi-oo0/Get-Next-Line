@@ -6,7 +6,7 @@
 /*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:26 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/09/27 21:21:23 by okamotoyayo      ###   ########.fr       */
+/*   Updated: 2024/10/05 19:46:20 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_getc(int fd)
 		{
 			bufp = buf;
 			n = 0;
-			return (EOF);
+			return -2;
 		}
 		bufp = buf;
 	}
