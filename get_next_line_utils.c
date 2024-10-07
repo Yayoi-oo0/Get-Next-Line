@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:26 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/07 17:26:55 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/10/08 06:33:33 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@ int	ft_getc(int fd)
 	if (n == 0)
 	{
 		n = read(fd, buf, sizeof buf);
-		printf("n = %d\n", n);
+		bufp = buf;
 		if (n < 0)
 		{
-			bufp = buf;
 			n = 0;
-			return -1;
+			return (-2);
 		}
-		bufp = buf;
 	}
 	if (--n >= 0)
 		return ((unsigned char)*bufp++);
