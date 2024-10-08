@@ -6,7 +6,7 @@
 /*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:33:46 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/08 17:44:39 by okamotoyayo      ###   ########.fr       */
+/*   Updated: 2024/10/08 17:59:21 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		fd = open(argv[1], O_RDONLY);
+		fd = 0;
+		open(argv[1], O_RDONLY);
 		printf("fd: %d\n", fd);
 	}
 	else
@@ -30,7 +31,7 @@ int	main(int argc, char **argv)
 	c = NULL;
 	while (1)
 	{
-		c = get_next_line(fd);
+		c = get_next_line(0);
 		if (!c)
 			break ;
 		printf("%s", c);
