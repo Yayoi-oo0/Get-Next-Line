@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:33:46 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/07 16:21:06 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/10/08 17:44:39 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,18 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	int		fd;
 	char	*c;
 
-	fd = open("test.txt", O_RDONLY);
+	if (argc == 2)
+	{
+		fd = open(argv[1], O_RDONLY);
+		printf("fd: %d\n", fd);
+	}
+	else
+		fd = open("test.txt", O_RDONLY);
 	c = NULL;
 	while (1)
 	{
