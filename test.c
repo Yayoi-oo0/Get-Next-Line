@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
+/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:33:46 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/08 17:59:21 by okamotoyayo      ###   ########.fr       */
+/*   Updated: 2024/10/09 18:48:02 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	c = NULL;
 	while (1)
 	{
-		c = get_next_line(0);
+		c = get_next_line(fd);
 		if (!c)
 			break ;
 		printf("%s", c);
@@ -42,6 +42,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
+// hirosuzu's test
 // #include <fcntl.h>
 // #include <stdio.h>
 
@@ -67,7 +68,7 @@ int	main(int argc, char **argv)
 // int        get_fd(char *file_name)
 // {
 //     int fd = open(file_name, O_RDWR);
-    
+
 //     if (fd == -1)
 //         return printf("Error: fd\n");
 
@@ -81,7 +82,7 @@ int	main(int argc, char **argv)
 
 //     if (argc == 2)
 //         file_name = argv[1];
-    
+
 //     fd = get_fd(file_name);
 //     loop(fd);
 
