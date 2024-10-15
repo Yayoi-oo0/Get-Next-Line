@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
+/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:26 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/08 06:33:33 by okamotoyayo      ###   ########.fr       */
+/*   Updated: 2024/10/13 23:02:48 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ char	*ft_putc(char *str, char c)
 	free(str);
 	return (newstr);
 }
+
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
