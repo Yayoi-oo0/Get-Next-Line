@@ -6,7 +6,7 @@
 /*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:26 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/15 16:45:36 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/10/15 17:36:20 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ char	*ft_putc(char *str, char c)
 	free(str);
 	return (newstr);
 }
-
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
