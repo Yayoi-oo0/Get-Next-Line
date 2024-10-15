@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:34 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/08 16:25:44 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/10/15 19:47:46 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ char	*get_next_line(int fd)
 		if (c == EOF)
 			break ;
 		if (c == -2)
-		{
-			free(line);
-			return (NULL);
-		}
+			return (free(line), NULL);
 		line = ft_putc(line, c);
 		if (c == '\n')
 			break ;
