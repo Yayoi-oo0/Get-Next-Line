@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_lile_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 18:46:26 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/15 16:28:31 by oyayoi           ###   ########.fr       */
+/*   Created: 2024/10/15 16:19:26 by oyayoi            #+#    #+#             */
+/*   Updated: 2024/10/15 16:29:22 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 
 int	ft_getc(int fd)
 {
-	static char	buf[BUFFER_SIZE];
-	static char	*bufp;
-	static int	n;
+	static t_buffer	buffer[FOPEN_MAX];
 
-	if (n == 0)
+	if (buffer[fd].n == 0)
 	{
-		n = read(fd, buf, BUFFER_SIZE);
-		bufp = buf;
-		if (n < 0)
+		buffer[fd].n = read(fd, buffer[fd].buf, BUFFER_SIZE);
+		buffer[fd].bufp = buffer[fd].buf;
+		if (buffer[fd].n < 0)
 		{
-			n = 0;
+			buffer[fd].n = 0;
 			return (-2);
 		}
 	}
-	if (--n >= 0)
-		return ((unsigned char)*bufp++);
+	if (--buffer[fd].n >= 0)
+		return ((unsigned char)*buffer[fd].bufp++);
 	return (EOF);
 }
 
