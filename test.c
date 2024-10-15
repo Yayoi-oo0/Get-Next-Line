@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:33:46 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/09 18:48:02 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/10/15 20:05:51 by okamotoyayo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,82 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	int		fd;
-	char	*c;
+    int		fd1, fd2;
+    char	*line1, *line2;
 
-	if (argc == 2)
-	{
-		fd = 0;
-		open(argv[1], O_RDONLY);
-		printf("fd: %d\n", fd);
-	}
-	else
-		fd = open("test.txt", O_RDONLY);
-	c = NULL;
-	while (1)
-	{
-		c = get_next_line(fd);
-		if (!c)
-			break ;
-		printf("%s", c);
-	}
-	close(fd);
-	system("leaks a.out");
-	free(c);
-	return (0);
+    if (argc < 3)
+    {
+        printf("Usage: %s <file1> <file2>\n", argv[0]);
+        return (1);
+    }
+
+    fd1 = open(argv[1], O_RDONLY);
+    if (fd1 == -1)
+    {
+        perror("Error opening file1");
+        return (1);
+    }
+
+    fd2 = open(argv[2], O_RDONLY);
+    if (fd2 == -1)
+    {
+        perror("Error opening file2");
+        close(fd1);
+        return (1);
+    }
+
+    while (1)
+    {
+        line1 = get_next_line(fd1);
+        if (line1)
+        {
+            printf("%s", line1);
+            free(line1);
+        }
+
+        line2 = get_next_line(fd2);
+        if (line2)
+        {
+            printf("%s", line2);
+            free(line2);
+        }
+
+        if (!line1 && !line2)
+            break;
+    }
+
+    close(fd1);
+    close(fd2);
+
+    return (0);
 }
+// int	main(int argc, char **argv)
+// {
+// 	int		fd;
+// 	char	*c;
+
+// 	if (argc == 2)
+// 	{
+// 		fd = 0;
+// 		open(argv[1], O_RDONLY);
+// 	}
+// 	else
+// 		fd = open("test.txt", O_RDONLY);
+// 	c = NULL;
+// 	while (1)
+// 	{
+// 		c = get_next_line(fd);
+// 		if (!c)
+// 			break ;
+// 		printf("%s", c);
+// 		free(c);
+// 	}
+// 	close(fd);
+// 	system("leaks a.out");
+// 	return (0);
+// }
 
 // hirosuzu's test
 // #include <fcntl.h>
