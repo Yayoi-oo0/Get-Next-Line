@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okamotoyayoi <okamotoyayoi@student.42.f    +#+  +:+       +#+        */
+/*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:19:26 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/16 00:44:43 by okamotoyayo      ###   ########.fr       */
+/*   Updated: 2024/11/18 22:03:44 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_getc(int fd)
 {
-	static t_buffer	buffer[FOPEN_MAX];
+	static t_buffer	buffer[1024];
 
 	if (buffer[fd].n == 0)
 	{

@@ -6,11 +6,11 @@
 /*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:46:26 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/10/15 17:36:20 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/10/31 20:41:10 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 int	ft_getc(int fd)
 {
