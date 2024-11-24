@@ -6,7 +6,7 @@
 /*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:29:44 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/11/18 22:03:00 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/11/23 18:24:37 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*get_next_line(int fd)
 
 	line = NULL;
 	c = 0;
-	if (fd < 0 || fd > 1024)
+	if (fd < 0 || fd > 1048576)
 		return (NULL);
 	while (1)
 	{

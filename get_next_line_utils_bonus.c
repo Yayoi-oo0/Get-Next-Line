@@ -6,7 +6,7 @@
 /*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:19:26 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/11/18 22:03:44 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/11/23 18:12:43 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_getc(int fd)
 {
-	static t_buffer	buffer[1024];
+	static t_buffer	buffer[1048576];
 
 	if (buffer[fd].n == 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: oyayoi <oyayoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:19:32 by oyayoi            #+#    #+#             */
-/*   Updated: 2024/11/18 21:58:35 by oyayoi           ###   ########.fr       */
+/*   Updated: 2024/11/24 15:00:10 by oyayoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
 
-# if BUFFER_SIZE > 8388608 || BUFFER_SIZE < 0
+# if BUFFER_SIZE > SSIZE_MAX || BUFFER_SIZE < 0
 #  undef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
